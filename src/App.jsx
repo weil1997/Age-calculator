@@ -1,12 +1,12 @@
 import React from "react";
-import Todo from "./components/Todo";
+import DateInput from "./components/DateInput";
 
 function App() {
   return (
     <div>
-      App
-      <Todo />
+      <DateInput />
     </div>
   );
 }
+
 export default App;
