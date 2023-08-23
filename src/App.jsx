@@ -3,8 +3,10 @@ import DateInput from "./components/DateInput";
 
 function App() {
   return (
-    <div>
-      <DateInput />
+    <div className="app">
+      <div className="app__content">
+        <DateInput />
+      </div>
     </div>
   );
 }
