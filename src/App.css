@@ -1,34 +1,133 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-family: Arial, Helvetica, sans-serif;
-  border: 2 px solid black;
-  width: 400px;
-  margin-left: auto;
-  margin-right: auto;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
 }
 
-.input {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
+:root {
+  --Purple: hsl(259, 100%, 65%);
+  --Light-red: hsl(0, 100%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 8%);
 }
 
-.input label {
-  font-weight: bold;
+/* Ställ in grundläggande utseende för sidokroppen */
+body {
+  min-height: 100vh; /* Minst 100% av vyhöjden */
+  display: flex; /* Använd flexlayout */
+  align-items: center; /* Centrera innehållet vertikalt */
+  justify-content: center; /* Centrera innehållet horisontellt */
+  background-color: var(
+    --Light-grey
+  ); /* Använd en anpassad variabel för bakgrundsfärg */
 }
 
-.age-text {
-  display: flex;
-  gap: 20px;
-  margin-top: 10px;
+/* Container för hela kortet */
+.card-container {
+  width: 600px; /* Bredd på kortet */
+  border-radius: 1rem 1rem 10rem 1rem; /* Avrundade hörn för kortsidan */
+  background-color: var(
+    --White
+  ); /* Använd en anpassad variabel för bakgrundsfärg */
+  padding: 2rem; /* Utfyllnad runt innehållet i kortet */
+  max-width: 90vh; /* Maximal bredd på kortet relativt till vyhöjden */
+  margin-top: 1rem; /* Marginal överst */
+  margin-bottom: 1rem; /* Marginal nederst */
 }
 
-.age-values {
-  display: flex;
-  gap: 20px;
-  margin-top: 5px;
-  font-weight: bold;
+/* Container för inmatningsfälten */
+.inputs-container {
+  display: flex; /* Använd flexlayout för inmatningsfälten */
+  gap: 0.25rem; /* Avstånd mellan fälten */
+}
+
+/* Container för varje inmatningsfält med etikett */
+.input-label-container {
+  display: flex; /* Använd flexlayout för etikett och inmatningsfält */
+  flex-direction: column; /* Stapla elementen vertikalt */
+  gap: 0.25rem; /* Avstånd mellan etikett och inmatningsfält */
+  flex: 1; /* Expandera för att ta upp tillgängligt utrymme */
+}
+
+/* Stilmall för etiketten ovanför varje inmatningsfält */
+.input-label-container label {
+  text-transform: uppercase; /* Omvandla text till versaler */
+  font-size: 0.75rem; /* Typsnittsstorlek för etiketten */
+  letter-spacing: 0.2rem; /* Avstånd mellan bokstäverna */
+}
+
+/* Stilmall för inmatningsfälten */
+.input-label-container input {
+  width: 130px; /* Bredd på inmatningsfältet */
+  padding: 0.75rem 1rem 0.75rem 1.25rem; /* Utfyllnad runt texten i fältet */
+  font-size: 1.5rem; /* Typsnittsstorlek för texten i fältet */
+  color: var(--Off-black); /* Använd en anpassad variabel för textfärg */
+  border-radius: 0.5rem; /* Avrundade hörn på fältet */
+  outline: none; /* Ta bort kontur vid fokus */
+  letter-spacing: 0.1rem; /* Avstånd mellan bokstäverna */
+}
+
+/* Stilmall för felmeddelanden */
+.error {
+  color: var(
+    --Light-red
+  ); /* Använd en anpassad variabel för felmeddelandets färg */
+  font-weight: 400; /* Vikt för texten */
+  font-style: italic; /* Kursiv stil */
+  margin-top: 0.25rem; /* Marginal överst */
+  letter-spacing: 0.1rem; /* Avstånd mellan bokstäverna */
+  font-size: 0.75rem; /* Typsnittsstorlek för texten */
+}
+
+/* Specifik stilmall för generiska felmeddelanden */
+.error.generic {
+  margin-top: 0.5rem; /* Marginal överst */
+}
+
+/* Container för divider-linjen */
+.divider-container {
+  display: flex; /* Använd flexlayout för innehåll */
+  align-items: center; /* Centrera innehållet vertikalt */
+  margin-top: 0.75rem; /* Marginal överst */
+  margin-bottom: 0.75rem; /* Marginal nederst */
+}
+
+/* Divider-linje */
+.divider {
+  height: 2px; /* Höjd på linjen */
+  background-color: var(
+    --Off-white
+  ); /* Använd en anpassad variabel för linjens färg */
+  width: 86px; /* Bredd på linjen */
+}
+
+/* Stilmall för knappar */
+.btn {
+  width: 70%; /* Bredd på knappen */
+  height: 70%; /* Höjd på knappen */
+  border-radius: 20px; /* Avrundade hörn på knappen */
+  border: none; /* Ingen kantlinje */
+  cursor: pointer; /* Peckpekarkursor vid hovring */
+  display: flex; /* Använd flexlayout för innehållet */
+  align-items: center; /* Centrera innehållet vertikalt */
+  justify-content: flex-end; /* Justera innehållet till höger */
+}
+
+/* Stilmall för resultatutmatningscontainer */
+.output-container h1 {
+  font-size: 4rem; /* Typsnittsstorlek för rubrik */
+  font-weight: 800px; /* Vikt för rubriktexten */
+  font-style: italic; /* Kursiv stil */
+}
+
+/* Specifik stilmall för markerad text i resultatutmatning */
+.output-container .highlighted {
+  color: var(--Purple); /* Använd en anpassad variabel för textfärgen */
+  letter-spacing: 0.25rem; /* Avstånd mellan bokstäverna */
 }
