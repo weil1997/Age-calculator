@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./app.css";
-import { monthsAndDays } from "./Constants";
-import isLeapYear from "./Functions";
+import "./App.css";
+import { monthsAndDays } from "./Constants.jsx";
+import isLeapYear from "./Functions.jsx";
 
 import React from "react";
 
